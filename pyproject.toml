@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "desktop-cli"
+version = "0.3.2"
+description = "Windows desktop automation CLI for AI agents"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = [
+    "typer>=0.9.0",
+    "uiautomation>=2.0.18",
+    "pyautogui>=0.9.54",
+    "Pillow>=9.5.0",
+]
+
+[project.scripts]
+desktop-cli = "desktop_cli.cli:app"
+desktop-daemon = "desktop_cli.daemon.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=5.13.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
