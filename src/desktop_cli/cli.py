@@ -20,6 +20,9 @@ from desktop_cli.format import format_response
 from desktop_cli.ipc import client as ipc_client
 from desktop_cli.lease import DEFAULT_AGENT_ID
 from desktop_cli.output import CLIError, EXIT_ERROR, OutputFormat, failure, success, timed
+from desktop_cli.util import ensure_utf8_stdio
+
+ensure_utf8_stdio()
 
 app = typer.Typer(
     name="desktop-cli",
