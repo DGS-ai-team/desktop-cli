@@ -117,6 +117,23 @@ Agent → desktop-cli → daemon（常驻，隐式启动）
 pip install -e .
 ```
 
+## 开发与 CI
+
+```powershell
+pip install -e ".[dev]"
+pytest -v
+python -m build
+```
+
+GitHub Actions（`.github/workflows/ci.yml`）在 Windows 上运行：
+
+- **test**：Python 3.8 / 3.11 / 3.12 单元测试 + CLI 冒烟
+- **build**：构建 sdist / wheel 并上传 artifact
+
+## 开源协议
+
+本项目采用 [MIT License](LICENSE)。
+
 ## 退出码
 
 | 码 | 含义 |

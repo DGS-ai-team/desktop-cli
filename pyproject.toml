@@ -23,7 +23,13 @@ desktop-daemon = "desktop_cli.daemon.__main__:main"
 [project.optional-dependencies]
 dev = [
     "pyinstaller>=5.13.0",
+    "pytest>=7.4.0",
+    "build>=1.0.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
